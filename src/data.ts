@@ -1,7 +1,5 @@
 // SRP: Bu dosya sadece uygulama verisini ve yapılandırmasını tanımlamaktan sorumludur.
 
-import bayramtokmakImage from './assets/bayramtokmak.jpg';
-
 interface Contact {
     name: string;
     title?: string; // Yeni alan eklendi
@@ -56,7 +54,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
         titleKey: 'about.bayram_title',
         bioKey: 'about.bayram_bio',
         phone: '0501 581 9606',
-        img: bayramtokmakImage
+        img: '/bayramtokmak.jpg'
     },
 ];
 

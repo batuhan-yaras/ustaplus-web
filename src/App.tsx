@@ -348,8 +348,8 @@ const Header: React.FC = () => {
             className="flex-shrink-0 flex items-center gap-2 cursor-pointer"
             onClick={() => setPage('home')}
           >
-            <Wrench className="w-8 h-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">
+            <Wrench className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-blue-600" />
+            <span className="text-lg sm:text-xl font-bold text-gray-900">
               {FIRM_NAME.split(' ')[0]}
               <span className="text-blue-600">{FIRM_NAME.split(' ')[1]}</span>
             </span>
@@ -381,8 +381,8 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden" id="mobile-menu">
-          <ul className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden bg-white border-t border-gray-200" id="mobile-menu">
+          <ul className="px-4 py-3 space-y-2">
             {navItems.map((item) => (
               <NavLink key={item.key} itemKey={item.key as Page} Icon={item.icon} isMobile />
             ))}
@@ -478,7 +478,7 @@ const HomePage: React.FC = () => {
       {/* Hero Section */}
       <div className="relative bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+          <div className="relative z-10 pb-8 bg-white sm:pb-12 md:pb-16 lg:max-w-2xl lg:w-full lg:pb-20 xl:pb-24">
             <svg
               className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
               fill="currentColor"
@@ -489,31 +489,31 @@ const HomePage: React.FC = () => {
               <polygon points="50,0 100,0 50,100 0,100" />
             </svg>
             <div className="relative pt-6 px-4 sm:px-6 lg:px-8"></div>
-            <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-              <div className="sm:text-center lg:text-left">
-                <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                  <span className="block xl:inline">{t('hero.title').split(' ')[0]}</span>{' '}
-                  <span className="block text-blue-600 xl:inline">
+            <main className="mt-8 sm:mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-24">
+              <div className="text-center lg:text-left">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight font-extrabold text-gray-900">
+                  <span className="block">{t('hero.title').split(' ')[0]}</span>{' '}
+                  <span className="block text-blue-600">
                     {t('hero.title').substring(t('hero.title').indexOf(' ') + 1)}
                   </span>
                 </h1>
-                <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                <p className="mt-3 text-sm sm:text-base text-gray-500 sm:mt-4 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                   {t('hero.subtitle')}
                 </p>
-                <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <div className="rounded-md shadow">
                     <a
                       href="#contact"
                       onClick={(e) => { e.preventDefault(); setPage('contact') }}
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 transition duration-150 ease-in-out"
+                      className="w-full flex items-center justify-center px-6 sm:px-8 py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 transition duration-150 ease-in-out"
                     >
                       {t('hero.cta')}
                     </a>
                   </div>
-                  <div className="mt-3 sm:mt-0 sm:ml-3">
+                  <div className="rounded-md shadow">
                     <a
                       href={`tel:${BASE_CONTACTS[0].phone.replace(/\s/g, '')}`}
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 md:py-4 md:text-lg md:px-10 transition duration-150 ease-in-out"
+                      className="w-full flex items-center justify-center px-6 sm:px-8 py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 md:py-4 md:text-lg md:px-10 transition duration-150 ease-in-out"
                     >
                       {t('hero.call_now')}
                     </a>
@@ -525,7 +525,7 @@ const HomePage: React.FC = () => {
         </div>
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <img
-            className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+            className="h-48 w-full object-cover sm:h-56 md:h-72 lg:w-full lg:h-full"
             src="plumbing.jpeg"
             alt="Sıhhi tesisat ve beyaz eşya tamiri"
             onError={(e) => (e.currentTarget.src = 'https://placehold.co/1000x800/e0e7ff/3b82f6?text=G%C3%B6rsel+Y%C3%BCklenemedi')}
@@ -534,21 +534,21 @@ const HomePage: React.FC = () => {
       </div>
 
       {/* Services Summary */}
-      <div className="py-16 bg-gray-50">
+      <div className="py-12 sm:py-16 bg-gray-50">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-12">{t('services.title')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-center text-gray-900 mb-8 sm:mb-12">{t('services.title')}</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {SERVICES.map((service) => {
               const Icon = IconMap[service.icon];
               return (
-                <div key={service.key} className="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-                  <Icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{t(`services.${service.key}`)}</h3>
-                  <p className="text-gray-500 text-sm mb-4">{t(`services.${service.key}_desc`)}</p>
+                <div key={service.key} className="bg-white p-4 sm:p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+                  <Icon className="w-10 h-10 sm:w-12 sm:h-12 text-blue-600 mx-auto mb-3 sm:mb-4" />
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{t(`services.${service.key}`)}</h3>
+                  <p className="text-gray-500 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">{t(`services.${service.key}_desc`)}</p>
                   <a
                     href="#services"
                     onClick={(e) => { e.preventDefault(); setPage('services') }}
-                    className="text-blue-600 font-medium hover:text-blue-800 transition"
+                    className="text-blue-600 font-medium hover:text-blue-800 transition text-sm sm:text-base"
                   >
                     Detaylar &rarr;
                   </a>
@@ -614,48 +614,48 @@ const AboutPage: React.FC = () => {
   const { setPage } = useApp();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-16 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-12 sm:py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Hero Bölümü */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             {t('about.title')}
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             15 yılı aşkın süredir Adana'da profesyonel teknik servis hizmeti sunuyoruz. 
             Müşteri memnuniyetini her zaman ön planda tutuyoruz.
           </p>
         </div>
 
         {/* İstatistikler */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12">
           {[
             { number: '15+', label: 'Yıl Deneyim' },
             { number: '1000+', label: 'Mutlu Müşteri' },
             { number: '24/7', label: 'Hizmet' },
             { number: '100%', label: 'Garanti' }
           ].map((stat, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-              <div className="text-3xl font-bold text-blue-600 mb-2">{stat.number}</div>
-              <div className="text-gray-600">{stat.label}</div>
+            <div key={index} className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition-shadow">
+              <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">{stat.number}</div>
+              <div className="text-sm sm:text-base text-gray-600">{stat.label}</div>
             </div>
           ))}
         </div>
 
         {/* Ekip Üyesi */}
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full mb-6">
-              <Users className="w-10 h-10 text-blue-600" />
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-blue-100 rounded-full mb-4 sm:mb-6">
+              <Users className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" />
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Kurucumuz</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Kurucumuz</h2>
+            <p className="text-base sm:text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
               15 yılı aşkın süredir Adana'da teknik servis sektöründe öncü olan uzman ekibimizin lideriyle tanışın
             </p>
           </div>
           
           {/* Kurucu Kartı */}
-          <div className="bg-gradient-to-br from-white to-blue-50 rounded-3xl shadow-2xl overflow-hidden border border-blue-100">
+          <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-blue-100">
             <div className="grid md:grid-cols-2 gap-0">
               {/* Görsel Taraf */}
               <div className="relative group">
@@ -679,10 +679,10 @@ const AboutPage: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       
                       {/* Corner Decorations */}
-                      <div className="absolute top-2 left-2 w-8 h-8 border-t-2 border-l-2 border-blue-500 rounded-tl-lg"></div>
-                      <div className="absolute top-2 right-2 w-8 h-8 border-t-2 border-r-2 border-blue-500 rounded-tr-lg"></div>
-                      <div className="absolute bottom-2 left-2 w-8 h-8 border-b-2 border-l-2 border-blue-500 rounded-bl-lg"></div>
-                      <div className="absolute bottom-2 right-2 w-8 h-8 border-b-2 border-r-2 border-blue-500 rounded-br-lg"></div>
+                      <div className="absolute top-2 left-2 w-6 h-6 sm:w-8 sm:h-8 border-t-2 border-l-2 border-blue-500 rounded-tl-lg"></div>
+                      <div className="absolute top-2 right-2 w-6 h-6 sm:w-8 sm:h-8 border-t-2 border-r-2 border-blue-500 rounded-tr-lg"></div>
+                      <div className="absolute bottom-2 left-2 w-6 h-6 sm:w-8 sm:h-8 border-b-2 border-l-2 border-blue-500 rounded-bl-lg"></div>
+                      <div className="absolute bottom-2 right-2 w-6 h-6 sm:w-8 sm:h-8 border-b-2 border-r-2 border-blue-500 rounded-br-lg"></div>
                     </div>
                   </div>
                 </div>
@@ -691,10 +691,10 @@ const AboutPage: React.FC = () => {
                 <div className="absolute -top-2 -right-2 group-hover:scale-110 transition-transform duration-300">
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full blur-lg opacity-75"></div>
-                    <div className="relative bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-3 rounded-full shadow-2xl border-2 border-white/50">
+                    <div className="relative bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-5 py-2 sm:py-3 rounded-full shadow-2xl border-2 border-white/50">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-yellow-300 rounded-full animate-pulse"></div>
-                        <span className="font-bold text-sm">15+ Yıl Deneyim</span>
+                        <span className="font-bold text-xs sm:text-sm">15+ Yıl Deneyim</span>
                       </div>
                     </div>
                   </div>
@@ -702,12 +702,12 @@ const AboutPage: React.FC = () => {
                 
                 {/* Professional Badge */}
                 <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-xl shadow-xl border border-gray-200">
+                  <div className="bg-white/95 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-xl shadow-xl border border-gray-200">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
-                        <CheckCircle className="w-4 h-4 text-white" />
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
+                        <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                       </div>
-                      <span className="text-gray-700 font-semibold text-sm">Usta Teknisyen</span>
+                      <span className="text-gray-700 font-semibold text-xs sm:text-sm">Usta Teknisyen</span>
                     </div>
                   </div>
                 </div>
@@ -865,23 +865,23 @@ const FAQPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-16 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-12 sm:py-16 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6">
-            <HelpCircle className="w-8 h-8 text-blue-600" />
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full mb-4 sm:mb-6">
+            <HelpCircle className="w-7 h-7 sm:w-8 sm:h-8 text-blue-600" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             {t('faq.title')}
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
             Sıkça sorulan soruların cevapları. Aklınıza takılan bir soru mu var? Hemen arayın!
           </p>
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-4 mb-16">
+        <div className="space-y-3 sm:space-y-4 mb-12">
           {faqs.map((faq) => (
             <FAQItem key={faq.qKey} qKey={faq.qKey} aKey={faq.aKey} />
           ))}
@@ -889,27 +889,27 @@ const FAQPage: React.FC = () => {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-blue-100">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 md:p-12 border border-blue-100">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
               Hala sorunuz mu var?
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
               Size yardımcı olmak için buradayız. Hemen iletişime geçin!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a
                 href={`tel:${BASE_CONTACTS[0].phone.replace(/\s/g, '')}`}
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                 Hemen Arayın
               </a>
               <a
                 href="#contact"
                 onClick={(e) => { e.preventDefault(); setPage('contact') }}
-                className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold border-2 border-blue-600 hover:bg-blue-50 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold border-2 border-blue-600 hover:bg-blue-50 transition-all duration-300 text-sm sm:text-base"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                 Mesaj Gönder
               </a>
             </div>

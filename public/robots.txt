@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://batuhan-yaras.github.io/ustaplus-web/sitemap.xml
+Sitemap: https://ustaplusteknik.com.tr/sitemap.xml
 
 # Crawl-delay (optional)
 Crawl-delay: 1

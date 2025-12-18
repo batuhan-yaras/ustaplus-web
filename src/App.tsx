@@ -928,65 +928,65 @@ const ContactPage: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-16 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Başlık */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">İletişim Bilgileri</h1>
-          <p className="text-xl text-gray-600">7/24 hizmetinizdeyiz. Hemen arayın!</p>
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 px-4">İletişim Bilgileri</h1>
+          <p className="text-lg sm:text-xl text-gray-600 px-4">7/24 hizmetinizdeyiz. Hemen arayın!</p>
         </div>
 
         {/* Ana İletişim Kartı */}
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden mb-12">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-8 text-white">
-            <div className="flex items-center justify-center mb-4">
-              <Phone className="w-12 h-12 text-yellow-300" />
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden mb-8 sm:mb-12 mx-4 sm:mx-0">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6 sm:p-8 text-white">
+            <div className="flex items-center justify-center mb-3 sm:mb-4">
+              <Phone className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-300" />
             </div>
-            <h2 className="text-3xl font-bold text-center mb-2">Hemen Arayın!</h2>
-            <p className="text-center text-blue-100 mb-6">Acil durumlar için 7/24 ulaşabilirsiniz</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-2">Hemen Arayın!</h2>
+            <p className="text-center text-blue-100 mb-4 sm:mb-6 text-sm sm:text-base px-4">Acil durumlar için 7/24 ulaşabilirsiniz</p>
             
             {/* Vurgulanan Telefon Numarası */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border-2 border-yellow-300/30">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 border-2 border-yellow-300/30">
               <a 
                 href={`tel:${BASE_CONTACTS[0].phone.replace(/\s/g, '')}`}
-                className="flex items-center justify-center gap-3 text-3xl md:text-4xl font-bold text-yellow-300 hover:text-yellow-200 transition-colors group"
+                className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-300 hover:text-yellow-200 transition-colors group"
               >
-                <Phone className="w-8 h-8 md:w-10 md:h-10 group-hover:scale-110 transition-transform" />
-                {BASE_CONTACTS[0].phone}
+                <Phone className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:scale-110 transition-transform flex-shrink-0" />
+                <span className="text-center break-all">{BASE_CONTACTS[0].phone}</span>
               </a>
-              <p className="text-center text-blue-100 mt-3">{BASE_CONTACTS[0].name}</p>
+              <p className="text-center text-blue-100 mt-2 sm:mt-3 text-sm sm:text-base">{BASE_CONTACTS[0].name}</p>
             </div>
           </div>
 
           {/* Diğer İletişim Bilgileri */}
-          <div className="p-8">
-            <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-6 sm:p-8">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {BASE_CONTACTS.map((info) => {
                 const Icon = IconMap[info.icon];
                 return (
-                  <div key={info.name} className="bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
+                  <div key={info.name} className="bg-gray-50 rounded-xl p-4 sm:p-6 hover:bg-gray-100 transition-colors">
                     <div className="flex items-start gap-4">
-                      <div className="bg-blue-100 rounded-lg p-3">
-                        <Icon className="w-6 h-6 text-blue-600" />
+                      <div className="bg-blue-100 rounded-lg p-2 sm:p-3">
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg font-bold text-gray-900 mb-1">{info.name}</h3>
+                        <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">{info.name}</h3>
                         {info.title && (
-                          <p className="text-sm text-gray-600 mb-3">{info.title}</p>
+                          <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">{info.title}</p>
                         )}
                         {info.phone && (
                           <a 
                             href={`tel:${info.phone.replace(/\s/g, '')}`} 
-                            className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                            className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors break-all"
                           >
-                            <Phone className="w-4 h-4" />
-                            {info.phone}
+                            <Phone className="w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm sm:text-base">{info.phone}</span>
                           </a>
                         )}
                         {info.email && (
                           <a 
                             href={`mailto:${info.email}`} 
-                            className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors mt-2"
+                            className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors mt-2 break-all"
                           >
-                            <Mail className="w-4 h-4" />
-                            {info.email}
+                            <Mail className="w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm sm:text-base">{info.email}</span>
                           </a>
                         )}
                       </div>
@@ -999,19 +999,19 @@ const ContactPage: React.FC = () => {
         </div>
 
         {/* Hizmet Alanı ve Harita */}
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-          <div className="p-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Hizmet Bölgemiz</h2>
-            <p className="text-gray-600 text-center mb-8 text-lg">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden mx-4 sm:mx-0">
+          <div className="p-6 sm:p-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-4">Hizmet Bölgemiz</h2>
+            <p className="text-gray-600 text-center mb-6 sm:mb-8 text-base sm:text-lg px-4">
               Adana'nın tüm ilçelerine profesyonel teknik servis hizmeti sunuyoruz.
             </p>
             
             {/* Bölge Listesi */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
               {['Çukurova', 'Seyhan', 'Yüreğir', 'Sarıçam'].map((district) => (
-                <div key={district} className="bg-blue-50 rounded-lg p-3 text-center">
-                  <MapPin className="w-5 h-5 text-blue-600 mx-auto mb-1" />
-                  <span className="text-sm font-medium text-gray-700">{district}</span>
+                <div key={district} className="bg-blue-50 rounded-lg p-2 sm:p-3 text-center">
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 mx-auto mb-1" />
+                  <span className="text-xs sm:text-sm font-medium text-gray-700">{district}</span>
                 </div>
               ))}
             </div>

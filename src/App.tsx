@@ -137,7 +137,7 @@ const translations: Translations = {
       q2: 'Do you provide guaranteed service?',
       a2: `Yes, all repairs and part replacements we perform are under a 1-year "${FIRM_NAME}" warranty.`,
       q3: 'Which areas do you serve?',
-      a3: 'We serve all districts of Istanbul. We have 24/7 mobile teams for emergencies.',
+      a3: 'We serve all districts of Istanbul. We have 7/24 mobile teams for emergencies.',
       q4: 'How can I get an appointment?',
       a4: 'You can call us directly or fill out the form on our contact page. We will get back to you as soon as possible.',
     },
@@ -632,8 +632,8 @@ const AboutPage: React.FC = () => {
           {[
             { number: '15+', label: 'Yıl Deneyim' },
             { number: '1000+', label: 'Mutlu Müşteri' },
-            { number: '24/7', label: 'Hizmet' },
-            { number: '100%', label: 'Garanti' }
+            { number: '7/24', label: 'Hizmet' },
+            { number: '%100', label: 'Garanti' }
           ].map((stat, index) => (
             <div key={index} className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition-shadow">
               <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">{stat.number}</div>
@@ -949,7 +949,7 @@ const ContactPage: React.FC = () => {
                 className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-300 hover:text-yellow-200 transition-colors group"
               >
                 <Phone className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 group-hover:scale-110 transition-transform flex-shrink-0" />
-                <span className="text-center break-all">{BASE_CONTACTS[0].phone}</span>
+                <span className="text-center whitespace-nowrap">{BASE_CONTACTS[0].phone}</span>
               </a>
               <p className="text-center text-blue-100 mt-2 sm:mt-3 text-sm sm:text-base">{BASE_CONTACTS[0].name}</p>
             </div>
@@ -977,7 +977,7 @@ const ContactPage: React.FC = () => {
                             className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors break-all"
                           >
                             <Phone className="w-4 h-4 flex-shrink-0" />
-                            <span className="text-sm sm:text-base">{info.phone}</span>
+                            <span className="text-sm sm:text-base whitespace-nowrap overflow-x-auto">{info.phone}</span>
                           </a>
                         )}
                         {info.email && (
@@ -986,7 +986,7 @@ const ContactPage: React.FC = () => {
                             className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors mt-2 break-all"
                           >
                             <Mail className="w-4 h-4 flex-shrink-0" />
-                            <span className="text-sm sm:text-base">{info.email}</span>
+                            <span className="text-sm sm:text-base whitespace-nowrap overflow-x-auto">{info.email}</span>
                           </a>
                         )}
                       </div>

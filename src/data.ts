@@ -105,12 +105,12 @@ export const STATISTICS: Statistic[] = [
         icon: 'clock'
     },
     {
-        value: '24/7',
+        value: '7/24',
         labelKey: 'stats.availability',
         icon: 'phone'
     },
     {
-        value: '100%',
+        value: '%100',
         labelKey: 'stats.satisfaction',
         icon: 'heart'
     }

@@ -977,7 +977,7 @@ const ContactPage: React.FC = () => {
                             className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors break-all"
                           >
                             <Phone className="w-4 h-4 flex-shrink-0" />
-                            <span className="text-sm sm:text-base whitespace-nowrap overflow-x-auto">{info.phone}</span>
+                            <span className="text-sm sm:text-base break-words">{info.phone}</span>
                           </a>
                         )}
                         {info.email && (
@@ -986,7 +986,7 @@ const ContactPage: React.FC = () => {
                             className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors mt-2 break-all"
                           >
                             <Mail className="w-4 h-4 flex-shrink-0" />
-                            <span className="text-sm sm:text-base whitespace-nowrap overflow-x-auto">{info.email}</span>
+                            <span className="text-sm sm:text-base break-words">{info.email}</span>
                           </a>
                         )}
                       </div>
